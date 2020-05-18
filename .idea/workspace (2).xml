@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:build" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:ingydotnet" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:old" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:perlpunk" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:release" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39f90731-33de-43c8-b547-add2e72f58b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/vimrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vscode/syncLocalSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/FUNDING.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/misspell.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/misspell.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brewfile" beforeDir="false" afterPath="$PROJECT_DIR$/Brewfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/.hyper.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/.hyper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/antibody.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config/antibody.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bash_profile" beforeDir="false" afterPath="$PROJECT_DIR$/config/bash_profile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/config/editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/config/gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/nanorc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/psqlrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/shell_env" beforeDir="false" afterPath="$PROJECT_DIR$/config/shell_env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sqliterc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/zshrc" beforeDir="false" afterPath="$PROJECT_DIR$/config/zshrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotbot-brewfile" beforeDir="false" afterPath="$PROJECT_DIR$/dotbot-brewfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotbot-brewfile/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dotbot-brewfile/.github/FUNDING.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotbot-brewfile/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dotbot-brewfile/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotbot-pip" beforeDir="false" afterPath="$PROJECT_DIR$/dotbot-pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotbot-pip/.github/FUNDING.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dotbot-pip/.github/FUNDING.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dotbot-pip/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dotbot-pip/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install.conf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/install.conf.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos" beforeDir="false" afterPath="$PROJECT_DIR$/macos" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/hyper.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/vscode-python.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell/.aliases" beforeDir="false" afterPath="$PROJECT_DIR$/shell/.aliases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell/.exports" beforeDir="false" afterPath="$PROJECT_DIR$/shell/.exports" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vscode/install.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vscode/install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/vscode/settings.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectId" id="1c0B47mjb7qfAxECXKBKddJ6rJF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39f90731-33de-43c8-b547-add2e72f58b2" name="Default Changelist" comment="" />
+      <created>1589655436319</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589655436319</updated>
+      <workItem from="1589655437690" duration="12693000" />
+      <workItem from="1589730174945" duration="1484000" />
+      <workItem from="1589731838237" duration="1505000" />
+      <workItem from="1589733939962" duration="2117000" />
+      <workItem from="1589737371411" duration="96000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1080" y="369" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589725974749">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="1080" y="369" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1589725974749" />
+    <state x="489" y="231" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1589731411509">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="489" y="231" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1589731411509" />
+    <state x="134" y="58" key="SettingsEditor" timestamp="1589656993472">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="134" y="58" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1589656993472" />
+    <state x="397" y="176" key="SettingsEditor/0.23.1792.1029@0.23.1792.1029" timestamp="1589655920733" />
+    <state x="1050" y="192" width="610" height="735" key="find.popup" timestamp="1589735015839">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="1050" y="192" width="610" height="735" key="find.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1589735015839" />
+    <state x="626" y="388" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1589655996961">
+      <screen x="0" y="23" width="1792" height="1029" />
+    </state>
+    <state x="626" y="388" key="git4idea.remote.GitConfigureRemotesDialog/0.23.1792.1029@0.23.1792.1029" timestamp="1589655996961" />
+  </component>
+</project>

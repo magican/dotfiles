@@ -1,0 +1,60 @@
+- clean: ['~']
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    # Terminal:
+    ~/.shell:
+      path: shell
+      create: true
+    ~/.shell_env: config/shell_env
+    ~/.bash_profile: config/bash_profile
+    ~/.bashrc: config/bashrc
+    ~/.zshrc: config/zshrc
+    ~/.hushlogin: config/hushlogin
+    ~/.antibody: config/antibody.txt
+    ~/.hyper.js: config/hyper.js
+
+    # SSH:
+    ~/.ssh/config: config/ssh_config
+
+    # Git:
+    ~/.gitconfig: config/gitconfig
+    ~/.gitignore_global: config/gitignore
+    ~/.gitattributes_global: config/gitattributes
+
+    # Editors:
+    ~/.editorconfig: config/editorconfig
+    ~/.vimrc: config/vimrc
+
+# Installing dependencies:
+- brewfile:
+    file: Brewfile
+    no-upgrage: true
+
+# These links should be created after everything is installed:
+- link:
+    ~/.gnupg/gpg-agent.conf: config/gpgagent
+
+# Setting up vscode:
+- link:
+    # vscode:
+    "~/Library/Application Support/Code/User/settings.json":
+        path: vscode/settings.json
+        create: true
+    "~/Library/Application Support/Code/User/syncLocalSettings.json":
+      path: vscode/syncLocalSettings.json
+      create: true
+    "~/Library/Application Support/Code/User/keybindings.json":
+        path: vscode/keybindings.json
+        create: true
+
+- shell:
+  - [bash ./vscode/install.sh, Installing vscode extensions]
+
+# Cleaning up:
+- shell:
+  - [mas upgrade, Upgrading mas Apps]
+  - [brew update && brew upgrade, Upgrading brew Apps]
+  - [brew cleanup, Cleaning up]
