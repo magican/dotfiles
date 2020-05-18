@@ -16,15 +16,15 @@ brew "mas"
 cask "zoomus" # zoom for video calls
 
 
-# browser Apps
+# Browser Apps
 cask "brave-browser"
 cask "google-chrome"
 cask "firefox"
 
-# wifi and bluetooth tools
+# WiFi and Bluetooth tools
 brew "blueutil"
 
-# main system packages and tools
+# Main system packages and tools
 brew "zsh"
 brew "antibody"
 brew "cmake"
@@ -38,6 +38,7 @@ brew "gawk"
 brew "git"
 brew "htop"
 
+# Python Development
 brew "python"
 brew "pyenv"
 brew "nvm"
@@ -51,25 +52,26 @@ cask "font-fira-code"
 cask "font-roboto-mono"
 cask "font-roboto-mono-for-powerline"
 
-cask "hyper"  # Electron based terminal
-cask "maccy"  # Clipboard manager for macOS
-
-cask "gimp"
-
 cask "visual-studio-code"
 cask "pycharm"
 cask "postman"
 cask "kite"
+
+# Images/Photos
+cask "gimp"
+
+# Ease your life
+cask "notion"  # Notion for notes and ideas management
+cask "hyper"  # Electron based terminal
+cask "maccy"  # Clipboard manager for macOS
+cask "rectangle"  # window management app based on Spectacle
+brew "grsync"  # GUI for rsync
 
 cask "qlcolorcode"
 cask "qlimagesize"
 cask "qlmarkdown"
 cask "qlstephen"
 cask "quicklook-json"
-
-cask "rectangle"  # window management app based on Spectacle
-
-brew "grsync"  # GUI for rsync
 
 # Install Mac App Store Apps
 mas "Cleaner-App", id: 1013897218
