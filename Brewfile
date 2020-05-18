@@ -63,7 +63,7 @@ cask "gimp"
 # Ease your life
 cask "notion"  # Notion for notes and ideas management
 cask "hyper"  # Electron based terminal
-cask "maccy"  # Clipboard manager for macOS
+cask "maccy"  # Clipboard manager for macOS (NB! Won't work on Catalina as of 05/2020)
 cask "rectangle"  # window management app based on Spectacle
 brew "grsync"  # GUI for rsync
 
