@@ -20,28 +20,22 @@ to set things up. Steps:
 
 ## CLI
 
-I am using both [`hyper`](https://hyper.is/)
+[`hyper`](https://hyper.is/)
 and default `Terminal App` as terminal emulators.
-I am using `zsh` with [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh)
+
+`zsh` with [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh)
 as a main shell.
-And [`antibody`](https://github.com/getantibody/antibody) to manage shell plugins.
-I also have a lot of tools to make my working experience better.
 
-So, they are configured nice and smoothly.
-You will have configured version managers, best practices, and useful tools.
-And some productivity hacks!
-
-I also have several other languages installed.
-But I am not using them on a daily basis.
-
+[`antibody`](https://github.com/getantibody/antibody) to manage shell plugins.
 
 ## Apps
 
-I am using `brew` to install all free apps for my mac.
-I also sync apps from AppStore with `brew`,
-so the resulting [`Brewfile`](https://github.com/magican/dotfiles/blob/master/Brewfile) contains everything.
+`brew` to install all free apps and sync apps from AppStore.
+`pip` for python apps
+The resulting [`Brewfile`](https://github.com/magican/dotfiles/blob/master/Brewfile) contains everything to start with.
 
-
+All other "heavy" staff I usually run dockerized or install separately, e.g. GDAL, QGIS, OSGEO, keras, pytorch, mlflow and so on
+ 
 ## Infrastructure
 
 I try to containerize everything.
@@ -49,7 +43,7 @@ So `docker` is my main development and deployment tool.
 You can install it from its [official site](https://docs.docker.com/docker-for-mac/) (`brew` [version](https://github.com/Homebrew/homebrew-core/blob/master/Formula/docker.rb) is also an option).
 
 I prefer to use `edge` version of `docker`.
-So, you will have to download it manually.
+One would have to download it manually.
 
 I prefer not to use databases and other services locally, one would prefer to
  dockerize them.
@@ -66,8 +60,7 @@ Here's [a list of packages](https://github.com/magican/dotfiles/blob/master/vsco
 - [`ayu`](https://github.com/ayu-theme/vscode-ayu) theme with modifications and `A File Icon` icons
 - [`Python`](https://github.com/Microsoft/vscode-python) plugin
 - `editorconfig` integration
-
-I also use [powered-up `vim`](https://github.com/magican/dotfiles/blob/master/config/nanorc)
+- [powered-up `vim`](https://github.com/magican/dotfiles/blob/master/config/vimrc)
 for in-terminal editing.
 
 
@@ -75,7 +68,14 @@ for in-terminal editing.
 
 Some of the used tools requires local configuration. Such as `git` with username and email.
 
-Here's the full list:
+NB! `gpgsign` is off in `gitconfig` by default.
+
+```
+[commit]
+  gpgsign = false
+```
+
+Full list of configs is availavle in:
 
 1. `~/.gitconfig_local` to store any user-specific data
 2. `~/.shell_env_local` to store local shell config, like: usernames, passwords, tokens, `gpg` keys and so on
@@ -83,4 +83,4 @@ Here's the full list:
 
 ## License
 
-[WTFPL](https://en.wikipedia.org/wiki/WTFPL): do the fuck you want and enjoy!
+[WTFPL](https://en.wikipedia.org/wiki/WTFPL): DO WHAT THE FUCK YOU WANT, but enjoy!
