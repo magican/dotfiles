@@ -136,7 +136,8 @@ module.exports = {
     "hyperterm-summon",
     "hypercwd",
     "hyper-opacity",
-    "hyper-search"
+    "hyper-search",
+    "hyper-one-dark"
   ],
 
   hyperTabs: {
