@@ -17,7 +17,7 @@ CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="false"
 
 # PLUGINS
-plugins=(git gitfast docker docker-compose osx last-working-dir common-aliases zsh-autosuggestions zsh-syntax-highlighting history-substring-search pip bundler poetry python brew zsh-z)
+plugins=(git gitfast docker docker-compose osx last-working-dir common-aliases zsh-autosuggestions zsh-syntax-highlighting history-substring-search pip bundler poetry python brew)
 
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 

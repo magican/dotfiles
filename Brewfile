@@ -63,7 +63,7 @@ cask "gimp"
 # Ease your life
 cask "notion"  # Notion for notes and ideas management
 cask "hyper"  # Electron based terminal
-cask "maccy"  # Clipboard manager for macOS (NB! Won't work on Catalina as of 05/2020)
+#cask "maccy"  # Clipboard manager for macOS (NB! Won't work on Catalina as of 05/2020)
 cask "rectangle"  # window management app based on Spectacle
 brew "grsync"  # GUI for rsync
 
@@ -78,6 +78,7 @@ mas "Cleaner-App", id: 1013897218
 mas "DeskCover", id: 1257711898
 mas "Instastats", id: 1017165214
 mas "LastPass", id: 926036361
+mas "Trello", id: 1278508951
 
 mas "Slack", id: 803453959
 mas "Telegram Lite", id: 946399090
