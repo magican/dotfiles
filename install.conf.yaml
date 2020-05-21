@@ -58,6 +58,7 @@
 
 - shell:
   - [bash ./vscode/install.sh, Installing vscode extensions]
+  - [bash ./pandoc/install.sh, Installing pandoc TeX support]
 
 # Cleaning up:
 - shell:
