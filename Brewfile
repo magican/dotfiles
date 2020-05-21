@@ -47,11 +47,18 @@ cask "docker"
 brew "docker-clean"  # Clean Docker containers, images, networks, and volumes
 brew "poetry"
 
+# Pandoc to work with PDFs
+brew "librsvg"
+cask "basictex"
+brew "pandoc"
+
+# Fonts
 cask "font-consolas-for-powerline"
 cask "font-fira-code"
 cask "font-roboto-mono"
 cask "font-roboto-mono-for-powerline"
 
+# Dev IDEs and tools
 cask "visual-studio-code"
 cask "pycharm"
 cask "postman"
