@@ -63,6 +63,7 @@ cask "visual-studio-code"
 cask "pycharm"
 cask "postman"
 cask "kite"
+cask sourcetree
 
 # Images/Photos
 cask "gimp"

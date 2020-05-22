@@ -24,8 +24,8 @@
   pruneTags = true
 [user]
   useConfigOnly = true
-	name = alexander.myasoedov
-	email = alexander.myasoedov@gmail.com
+	name = Myasoyedov, Aleksandr
+	email = Aleksandr.Myasoyedov@nexign.com
 [diff]
   indentHeuristic = on
   noprefix = true
