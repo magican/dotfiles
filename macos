@@ -33,6 +33,7 @@ osascript -e 'tell application "System Preferences" to quit'
 # General
   # Ask to keep changes when closing documents
   defaults write NSGlobalDomain NSCloseAlwaysConfirmsChanges -bool true
+
 # Dock
   defaults write com.apple.dock persistent-apps -array              # Wipe all (default) app icons from the Dock
   defaults write com.apple.dock tilesize -int 36                    # Size
@@ -151,6 +152,10 @@ defaults write com.apple.Safari \
 # https://github.com/p0deje/Maccy
 defaults write org.p0deje.Maccy pasteByDefault true
 defaults write org.p0deje.Maccy historySize 20
+
+# Allowing to run Apps with no signature
+xattr -d com.apple.quarantine /Applications/Maccy.app
+xattr -d com.apple.quarantine /Applications/SourceTree.app
 
 # Restarting apps:
 echo 'Restarting apps...'

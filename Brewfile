@@ -63,7 +63,7 @@ cask "visual-studio-code"
 cask "pycharm"
 cask "postman"
 cask "kite"
-cask sourcetree
+cask "sourcetree"  # xattr -d com.apple.quarantine /Applications/SourceTree.app
 
 # Images/Photos
 cask "gimp"
@@ -71,7 +71,7 @@ cask "gimp"
 # Ease your life
 cask "notion"  # Notion for notes and ideas management
 cask "hyper"  # Electron based terminal
-#cask "maccy"  # Clipboard manager for macOS (NB! Won't work on Catalina as of 05/2020)
+cask "maccy"  # Clipboard manager for macOS (NB! Won't work on Catalina as of 05/2020 run xattr -d com.apple.quarantine /Applications/Maccy.app)
 cask "rectangle"  # window management app based on Spectacle
 brew "grsync"  # GUI for rsync
 
