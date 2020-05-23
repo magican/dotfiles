@@ -157,6 +157,12 @@ defaults write org.p0deje.Maccy historySize 20
 xattr -d com.apple.quarantine /Applications/Maccy.app
 xattr -d com.apple.quarantine /Applications/SourceTree.app
 
+xattr -d com.apple.quarantine ~/Library/QuickLook/QLStephen.qlgenerator
+xattr -d com.apple.quarantine ~/Library/QuickLook/QLColorCode.qlgenerator
+xattr -d com.apple.quarantine ~/Library/QuickLook/qlImageSize.qlgenerator
+xattr -d com.apple.quarantine ~/Library/QuickLook/QLMarkdown.qlgenerator
+xattr -d com.apple.quarantine ~/Library/QuickLook/QuickLookJSON.qlgenerator
+
 # Restarting apps:
 echo 'Restarting apps...'
 killall Finder

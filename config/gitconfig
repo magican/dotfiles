@@ -15,6 +15,7 @@
   required = true
 [commit]
   gpgsign = false
+	template = ~/.stCommitMsg
 [push]
   default = simple
 [fetch]
