@@ -12,8 +12,9 @@ chmod -R +x *
 ## Go up one level.
 #cd "$(dirname "$0")/.."
 
-#printf "\\r› Installing packages and applications.\\n\\n"
-#brew bundle > /dev/null
+printf "\\r› Installing packages and applications.\\n\\n"
+#brew bundle --file homebrew/Brewfile > /dev/null
+brew bundle --file homebrew/Brewfile
 
 # Find the installers and run them iteratively.
 find . -name install.sh | while read -r installer ; do sh -c "${installer}" ; done

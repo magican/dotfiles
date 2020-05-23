@@ -28,18 +28,16 @@
     ~/.editorconfig: config/editorconfig
     ~/.vimrc: config/vimrc
 
-# Installing dependencies:
-- brewfile:
-    file: homebrew/Brewfile
-    no-upgrage: true
-- pip:
-    file: python/requirements.txt
-    binary: /usr/local/bin/pip3
-    user: False    # Like --user
-    stdout: false # Print the execution stdout
-    stderr: true  # Print the execution stderr
-- shell:
-    - [bash brew bundle, Installing vscode extensions]
+## Installing dependencies:
+#- brewfile:
+#    file: homebrew/Brewfile
+#    no-upgrage: true
+#- pip:
+#    file: python/requirements.txt
+#    binary: /usr/local/bin/pip3
+#    user: False    # Like --user
+#    stdout: false # Print the execution stdout
+#    stderr: true  # Print the execution stderr
 
 # These links should be created after everything is installed:
 - link:
@@ -57,10 +55,6 @@
     "~/Library/Application Support/Code/User/keybindings.json":
         path: vscode/keybindings.json
         create: true
-
-- shell:
-  - [bash ./vscode/install.sh, Installing vscode extensions]
-  - [bash ./pandoc/install.sh, Installing pandoc TeX support]
 
 # Cleaning up:
 - shell:
