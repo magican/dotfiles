@@ -53,10 +53,8 @@ cask "basictex"
 brew "pandoc"
 
 # Fonts
-cask "font-consolas-for-powerline"
 cask "font-fira-code"
 cask "font-roboto-mono"
-cask "font-roboto-mono-for-powerline"
 
 # Dev IDEs and tools
 cask "visual-studio-code"
@@ -65,8 +63,12 @@ cask "postman"
 cask "kite"
 cask "sourcetree"  # xattr -d com.apple.quarantine /Applications/SourceTree.app
 
-# Images/Photos
+# Images/Photos/Video/Media
+cask 'vlc'
 cask "gimp"
+
+# Web Apps
+cask 'transmission'
 
 # Ease your life
 cask "notion"  # Notion for notes and ideas management

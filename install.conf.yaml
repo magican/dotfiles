@@ -30,12 +30,12 @@
 
 # Installing dependencies:
 - brewfile:
-    file: Brewfile
+    file: homebrew/Brewfile
     no-upgrage: true
 - pip:
     file: python/requirements.txt
     binary: /usr/local/bin/pip3
-    user: true    # Like --user
+    user: False    # Like --user
     stdout: false # Print the execution stdout
     stderr: true  # Print the execution stderr
 - shell:
