@@ -1,23 +1,12 @@
 #!/usr/bin/env bash
-#
-# Run all dotfiles installers.
-#
-
 # Exit if any subcommand or pipeline returns a non-zero status.
 set -e
 
-# Change permissions first
-chmod -R +x *
+# Ask for the administrator password upfront.
+sudo -v
 
-## Go up one level.
-#cd "$(dirname "$0")/.."
-
-printf "\\r› Installing packages and applications.\\n\\n"
-#brew bundle --file homebrew/Brewfile > /dev/null
-brew bundle --file homebrew/Brewfile
-
-# Find the installers and run them iteratively.
-find . -name install.sh | while read -r installer ; do sh -c "${installer}" ; done
+# Keep-alive: update existing `sudo` time stamp until script has finished.
+while true; do sudo -n true; sleep 120; kill -0 "$$" || exit; done 2>/dev/null &
 
 #
 # Standard dotbot pre-configuration:
@@ -34,4 +23,4 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 # Linking dotfiles:
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir dotbot-brewfile --plugin-dir dotbot-pip -c "${CONFIG}" "${@}"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

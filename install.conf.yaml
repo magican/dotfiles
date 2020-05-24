@@ -1,7 +1,10 @@
 - clean: ['~']
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    # Run all dotfiles installers.
+  - [brew bundle --file homebrew/Brewfile, Installing packages and applications.]
+  # Find the installers and run them in parallel.
+  - [find . -name install.sh -type f -print0 | xargs -0 -n1 -P4 bash;, Find the installers and run them iteratively.]
 
 - link:
     # Terminal:
