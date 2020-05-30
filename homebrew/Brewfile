@@ -16,10 +16,12 @@ brew "mas"
 cask "zoomus" # zoom for video calls
 
 
-# Browser Apps
+# Web Apps
 cask "brave-browser"
 cask "google-chrome"
 cask "firefox"
+cask "tor-browser"
+cask "transmission"
 
 # WiFi and Bluetooth tools
 brew "blueutil"
@@ -37,6 +39,7 @@ brew "fzf"
 brew "gawk"
 brew "git"
 brew "htop"
+cask "cleanmymac"
 
 # Python Development
 brew "python"
@@ -66,9 +69,6 @@ cask "sourcetree"  # xattr -d com.apple.quarantine /Applications/SourceTree.app
 # Images/Photos/Video/Media
 cask 'vlc'
 cask "gimp"
-
-# Web Apps
-cask 'transmission'
 
 # Ease your life
 cask "notion"  # Notion for notes and ideas management
