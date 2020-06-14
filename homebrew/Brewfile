@@ -39,6 +39,7 @@ brew "fzf"
 brew "gawk"
 brew "git"
 brew "htop"
+brew "telnet"
 cask "cleanmymac"
 
 # Python Development
