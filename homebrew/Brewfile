@@ -62,6 +62,7 @@ cask "font-roboto-mono"
 
 # Dev IDEs and tools
 cask "visual-studio-code"
+cask "jetbrains-toolbox"
 cask "pycharm"
 cask "postman"
 cask "kite"

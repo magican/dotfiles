@@ -449,5 +449,6 @@
   "tslint.configFile": "tslint.json",
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+},
+"python.languageServer": "Microsoft"
 }
