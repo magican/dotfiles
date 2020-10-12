@@ -57,6 +57,7 @@ cask "basictex"
 brew "pandoc"
 
 # Fonts
+brew "svn"
 cask "font-fira-code"
 cask "font-roboto-mono"
 
