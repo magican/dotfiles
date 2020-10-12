@@ -272,3 +272,4 @@ ENV/
 
 # OS files
 .DS_Store
+homebrew/Brewfile.lock.json

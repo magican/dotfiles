@@ -28,6 +28,8 @@ brew "blueutil"
 
 # Main system packages and tools
 brew "zsh"
+brew "zsh-syntax-highlighting"
+brew "zsh-autosuggestions"
 brew "antibody"
 brew "cmake"
 brew "coreutils"
