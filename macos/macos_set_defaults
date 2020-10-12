@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 # This file contains settings for mac which makes me happy.
 # It is not a full list.
 #
@@ -15,6 +13,19 @@ set -e
 #
 # All values are sorted inside their blocks: newest are on the top.
 #
+
+set +e
+
+disable_agent() {
+	mv "$1" "$1_DISABLED" >/dev/null 2>&1 ||
+		sudo mv "$1" "$1_DISABLED" >/dev/null 2>&1
+}
+
+unload_agent() {
+	launchctl unload -w "$1" >/dev/null 2>&1
+}
+
+test -z "$TRAVIS_JOB_ID" && sudo -v
 
 # MANUAL
     # Security & Privacy -> General: Require password immediately.
@@ -31,89 +42,119 @@ osascript -e 'tell application "System Preferences" to quit'
 ###############################################################################
 # General security & privacy                                                  #
 ###############################################################################
+echo ""
+echo "› System:"
+echo "  › Disable press-and-hold for keys in favor of key repeat"
+defaults write -g ApplePressAndHoldEnabled -bool false
 
-# Disable storing information about downloaded files by Quarantine.
+echo "  › Show the ~/Library folder"
+chflags nohidden ~/Library
+
+echo "  › Show the /Volumes folder"
+sudo chflags nohidden /Volumes
+
+echo "  › Set a really fast key repeat"
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+echo "  › Enable text replacement almost everywhere"
+defaults write -g WebAutomaticTextReplacementEnabled -bool true
+
+echo "  › Turn off keyboard illumination when computer is not used for 5 minutes"
+defaults write com.apple.BezelServices kDimTime -int 300
+
+echo "  › Require password immediately after sleep or screen saver begins"
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+echo "  › Always show scrollbars"
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
+
+echo "  › Show battery percent"
+defaults write com.apple.menuextra.battery ShowPercent -bool true
+
+echo "  › Disable the 'Are you sure you want to open this application?' dialog"
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+echo "  › Disable storing information about downloaded files by Quarantine."
 # Clear the file: `:> file` is equivalent to `true > file`
 (:> ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2) &> /dev/null
 # Make the file immutable.
 sudo chflags schg ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2 &> /dev/null
 
-# Disable Bonjour multicast advertisements.
+echo "  › Disable Bonjour multicast advertisements."
 sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool true
 
-# Disable automatic login.
+echo "  › Disable automatic login."
 sudo defaults delete /Library/Preferences/com.apple.loginwindow autoLoginUser &> /dev/null
 sudo rm /etc/kcpassword &> /dev/null
 
-# Disable remote control infrared receiver.
+echo "  › Disable remote control infrared receiver."
 sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -bool false
 
-# Allow apps downloaded from "Anywhere".
+echo "  › Allow apps downloaded from "Anywhere"."
 sudo spctl --master-disable
 
-# Do not send diagnostic & usage data to Apple.
+echo "  › Do not send diagnostic & usage data to Apple."
 defaults -currentHost write com.apple.SubmitDiagInfo AutoSubmit -bool false
 
-# Save to disk (not to iCloud) by default.
+echo "  › Save to disk (not to iCloud) by default."
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Disable crash reporter.
+echo "  › Disable crash reporter."
 defaults write com.apple.CrashReporter DialogType none
 
-# Disable location services.
+echo "  › Disable location services."
 defaults write com.apple.MCX DisableLocationServices -bool true
 
-# Require password immediately after sleep or screen saver begins.
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-# Disable service daemons related to "Feedback Assistant".
+echo "  › Disable service daemons related to 'Feedback Assistant'."
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 2> /dev/null
 launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist 2> /dev/null
 
-# Disable "Apple Wide Area Connectivity" service daemon.
+echo "  › # Disable 'Apple Wide Area Connectivity' service daemon."
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.awacsd.plist 2> /dev/null
 
-# Disable service daemon related to "Wireless Diagnostics".
+echo "  › Disable service daemon related to 'Wireless Diagnostics'."
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.awdd.plist 2> /dev/null
 
-# Disable service daemon related to "Crash Reporter".
+echo "  › Disable service daemon related to 'Crash Reporter'."
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.CrashReporterSupportHelper.plist 2> /dev/null
 
-# Disable service daemon that collects and sends to Apple any recent diagnostic information.
+echo "  › Disable service daemon that collects and sends to Apple any recent diagnostic information."
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SubmitDiagInfo.plist 2> /dev/null
 
-# Disable service daemon related to "Siri".
+echo "  › Disable service daemon related to 'Siri'."
 launchctl unload -w /System/Library/LaunchAgents/com.apple.assistant_service.plist 2> /dev/null
 
-# Disable Ask Siri.
+echo "  › Disable Ask Siri."
 defaults write com.apple.assistant.support "Assistant Enabled" -bool false
 
-# Don't show Siri in menu bar.
+echo "  › Don't show Siri in menu bar."
 defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" -bool false
 
-# Disable service daemon related to photos and iCloud.
+echo "  › Disable service daemon related to photos and iCloud."
 launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudphotosd.plist 2> /dev/null
 
-# Disable service daemon related to Safari history syncing.
+echo "  › Disable service daemon related to Safari history syncing."
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafariCloudHistoryPushAgent.plist 2> /dev/null
 
-# Disable service daemon related to Safari bookmark syncing.
+echo "  › Disable service daemon related to Safari bookmark syncing."
 launchctl unload -w /System/Library/LaunchAgents/com.apple.safaridavclient.plist 2> /dev/null
 
-# Limit ad tracking. Opt out of receiving ads targeted to your interests in Apple Apps and your macOS devices.
+echo "  › Limit ad tracking. Opt out of receiving ads targeted to your interests in Apple Apps and your macOS devices."
 defaults write com.apple.AdLib forceLimitAdTracking -bool false
 
-# Disable Touch Bar typing suggestions.
+echo "  › Disable Touch Bar typing suggestions."
 defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
 
 # === General ===
-
-# General
-  # Ask to keep changes when closing documents
+echo ""
+echo "› General:"
+echo "  › Ask to keep changes when closing documents"
   defaults write NSGlobalDomain NSCloseAlwaysConfirmsChanges -bool true
 
-# Dock
+echo "› Dock"
   defaults write com.apple.dock persistent-apps -array              # Wipe all (default) app icons from the Dock
   defaults write com.apple.dock tilesize -int 36                    # Size
   defaults write com.apple.dock orientation -string "left"          # Position on screen
@@ -121,11 +162,11 @@ defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
   defaults write com.apple.dock autohide -bool true                 # Automatically hide and show the Dock
   defaults write com.apple.dock show-recents -bool false            # Show recent applications in Dock
 
-# Keyboard
+echo "› Keyboard"
   # Text: Disable auto-correct
   defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Trackpad
+echo "› Trackpad"
   # Trackpad: enable tap to click for this user and for the login screen
   defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
   defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -133,15 +174,12 @@ defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
   defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
   defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Accessibility
+echo "› Accessibility"
   # Mouse & Trackpad -> Trackpad Options -> Enable Dragging
   defaults write com.apple.AppleMultitouchTrackpad Dragging -bool true
   defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
 
-# Other
-  # Show battery percentage
-  defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
+echo "› Other"
   # Prevent Photos from opening automatically when devices are plugged in
   defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
@@ -154,7 +192,7 @@ defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
   # Prevent Time Machine from prompting to use new hard drives as backup volume
   defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-# TextEdit
+echo "› TextEdit"
   # Use plain text mode for new TextEdit documents
   defaults write com.apple.TextEdit RichText -int 0
 
@@ -163,62 +201,64 @@ defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
   defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 # === Finder ===
-
-# Set Desktop as the default location for new Finder windows
+echo ""
+echo "› Finder:"
+echo "  › Set Desktop as the default location for new Finder windows"
 # For other paths, use `PfLo` and `file:///full/path/here/`
 defaults write com.apple.finder NewWindowTarget -string "PfDe"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
-# Show icons for hard drives, servers, and removable media on the desktop
+echo "  › Show icons for hard drives, servers, and removable media on the desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
-# When performing a search, search the current folder by default
+echo "  › When performing a search, search the current folder by default"
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-# Use list view in all Finder windows by default
+echo "  › Use list view in all Finder windows by default"
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Keep folders on top when sorting by name:
+echo "  › Keep folders on top when sorting by name:"
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
-# Show Finder path bar:
+echo "  › Show Finder path bar:"
 defaults write com.apple.finder ShowPathbar -bool true
 
-# Show status bar in Finder:
+echo "  › Show status bar in Finder:"
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Show hidden files in Finder:
+echo "  › Show hidden files in Finder:"
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Show file extensions in Finder:
+echo "  › Show file extensions in Finder:"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons
+echo "  › Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons"
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# Allow text selection in Quick Look
+echo "  › Allow text selection in Quick Look"
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
-# Display full POSIX path as Finder window title
+echo "  › Display full POSIX path as Finder window title"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
-# Avoid creating .DS_Store files on network volumes
+echo "  › Avoid creating .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Show Library folder
+echo "  › Show Library folder"
 chflags nohidden ~/Library
 
 
 # === Safari ===
-
-# Privacy: don’t send search queries to Apple
+echo ""
+echo "› Safari:"
+echo "  › Privacy: don’t send search queries to Apple"
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
-# Improve Safari security
+echo "  › Improve Safari security"
 defaults write com.apple.Safari \
   com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled \
   -bool false
@@ -228,6 +268,8 @@ defaults write com.apple.Safari \
 
 
 # === Maccy ===
+echo ""
+echo "› Maccy:"
 # https://github.com/p0deje/Maccy
 defaults write org.p0deje.Maccy pasteByDefault true
 defaults write org.p0deje.Maccy historySize 20
@@ -245,7 +287,8 @@ xattr -d com.apple.quarantine ~/Library/QuickLook/QuickLookJSON.qlgenerator
 ###############################################################################
 # Transmission                                                                #
 ###############################################################################
-
+echo ""
+echo "› Transmission:"
 # Use `~/Documents/Torrents` to store incomplete downloads.
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
 defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
@@ -298,7 +341,8 @@ defaults write org.m0k.transmission PlaySeedingSound -bool false
 ###############################################################################
 # VLC media player                                                            #
 ###############################################################################
-
+echo ""
+echo "› VLC:"
 # Enable checking for updates automatically.
 defaults write org.videolan.vlc SUEnableAutomaticChecks -bool true
 
@@ -308,6 +352,20 @@ defaults write org.videolan.vlc SUSendProfileInfo -bool true
 # Set language to "American English".
 defaults write org.videolan.vlc language -string "en"
 
+#############################
+
+echo ""
+echo "› Media:"
+if [ -z "$KEEP_ITUNES" ]; then
+	echo "  › Disable iTunes helper"
+	disable_agent /Applications/iTunes.app/Contents/MacOS/iTunesHelper.app
+	echo "  › Prevent play button from launching iTunes"
+	unload_agent /System/Library/LaunchAgents/com.apple.rcd.plist
+fi
+
+echo "  › Disable Spotify web helper"
+disable_agent ~/Applications/Spotify.app/Contents/MacOS/SpotifyWebHelper
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
@@ -316,9 +374,17 @@ echo 'Restarting apps...'
 
 AFFECTED_APPS=(
 	"Activity Monitor"
+  "Address Book"
+  "Calendar"
+  "Contacts"
+  "cfprefsd"
 	"App Store"
 	"Dock"
 	"Finder"
+  "Mail"
+  "Messages"
+  "Photos"
+  "Safari"
 	"SystemUIServer"
 	"Terminal"
 	"Transmission"
