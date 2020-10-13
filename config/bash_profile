@@ -10,4 +10,6 @@ export PATH=/usr/local/bin:$PATH
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
+export POETRY_VIRTUALENVS_PATH=~/.virtualenvs/
+
 alias python='python3
