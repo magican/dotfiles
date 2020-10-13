@@ -9,7 +9,7 @@
   "sync.forceDownload": false,
   "sync.forceUpload": false,
   "sync.quietSync": true,
-  "sync.gist": "9477516ecaba4ac8e0d9911269576376",
+  "sync.gist": "9373db3b6055a5e0a3b4d8bf5e3cceab",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -169,7 +169,6 @@
   "cSpell.ignoreRegExpList": [
     "r'[A-Z]+'"
   ],
-  "python.pythonPath": "~/.virtualenvs/${workspaceFolderBasename}/bin/python",
   "files.watcherExclude": {
     "**/venv/**": true,
     "**/__pycache__": true,
@@ -450,5 +449,13 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
-"python.languageServer": "Microsoft"
+"python.languageServer": "Microsoft",
+"python.defaultInterpreterPath": "~/.virtualenvs/${workspaceFolderBasename}/bin/python",
+"settingsSync.ignoredExtensions": [
+
+],
+"settingsSync.keybindingsPerPlatform": false,
+"settingsSync.ignoredSettings": [
+
+]
 }

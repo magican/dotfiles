@@ -1,5 +1,5 @@
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/aleksandr.myasoedov/.gitignore_global
   attributesFile = ~/.gitattributes_global
 	autocrlf = input
 [pager]
@@ -25,8 +25,8 @@
   pruneTags = true
 [user]
   useConfigOnly = true
-	name = Myasoyedov, Aleksandr
-	email = Aleksandr.Myasoyedov@nexign.com
+	name = Aleksandr Myasoyedov
+	email = Aleksandr.Myasoyedov@nedra.digital
 [diff]
   indentHeuristic = on
   noprefix = true
