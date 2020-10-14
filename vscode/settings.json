@@ -449,7 +449,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
-"python.languageServer": "Microsoft",
+"python.languageServer": "Pylance",
 "python.defaultInterpreterPath": "~/.virtualenvs/${workspaceFolderBasename}/bin/python",
 "settingsSync.ignoredExtensions": [
 
@@ -457,5 +457,7 @@
 "settingsSync.keybindingsPerPlatform": false,
 "settingsSync.ignoredSettings": [
 
-]
+],
+"python.terminal.activateEnvInCurrentTerminal": true,
+"python.venvPath": "~/.virtualenvs"
 }
