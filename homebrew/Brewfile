@@ -62,11 +62,12 @@ cask "font-fira-code"
 cask "font-roboto-mono"
 
 # Dev IDEs and tools
-cask "visual-studio-code"
+cask "insomnia"
 cask "jetbrains-toolbox"
-cask "postman"
 cask "kite"
+cask "postman"
 cask "sourcetree"  # xattr -d com.apple.quarantine /Applications/SourceTree.app
+cask "visual-studio-code"
 
 # Images/Photos/Video/Media
 cask 'vlc'
