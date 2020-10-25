@@ -206,7 +206,6 @@
   "workbench.statusBar.visible": true,
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "none",
-  "python.linting.enabled": false,
   "git.showInlineOpenFileAction": false,
   "git.autorefresh": true,
   "git.decorations.enabled": true,
@@ -394,7 +393,7 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "git.confirmSync": false,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "problems.showCurrentInStatus": true,
   // "python.formatting.autopep8Path": "~/.virtualenvs/${workspaceFolderBasename}/bin/autopep8",
   "markdown-pdf.outputDirectory": "~/Downloads/markdown-pdf",
@@ -459,5 +458,6 @@
 
 ],
 "python.terminal.activateEnvInCurrentTerminal": true,
-"python.venvPath": "~/.virtualenvs"
+"python.venvPath": "~/.virtualenvs",
+"python.linting.flake8Enabled": true
 }
