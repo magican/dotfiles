@@ -25,3 +25,5 @@ export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bi
 source "${ZSH}/oh-my-zsh.sh"
 source "$HOME/.shell_env"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
+
+export PATH="$HOME/.poetry/bin:$PATH"

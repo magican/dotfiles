@@ -17,6 +17,9 @@ to set things up. Steps:
 2. `cd` into `dotfiles/` folder
 3. Run: `./install`
 
+For Ubuntu run:
+`sudo pip3 install dotbot` 
+`dotbot -c ubu_install.conf.yaml`
 
 ## CLI
 
