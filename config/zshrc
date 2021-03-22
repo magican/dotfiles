@@ -27,3 +27,7 @@ source "$HOME/.shell_env"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
